@@ -1,7 +1,4 @@
-echo "
 sudo apt-get update\
-  && echo $(hostname -I | cut -d\  -f1) $(hostname) | sudo tee -a /etc/hosts\
-  && sudo apt-get install net-tools -y\
   && sudo apt install python-minimal -y\
   && sudo apt-get install python3-pip -y\
   && sudo apt-get install python-pip -y\
@@ -12,8 +9,5 @@ sudo apt-get update\
   && sudo usermod -aG docker $(whoami | awk '{print $1}')\
   && mkdir -p ~/netflix-proxy\
   && cd ~/netflix-proxy\
-  && curl -fsSL https://github.com/Newlearner365/netflix-proxy/archive/latest.tar.gz | gunzip - | tar x --strip-components=1\
+  && curl -fsSL https://github.com/tycoonge/netflix-proxy/archive/latest.tar.gz | gunzip - | tar x --strip-components=1\
   && ./build.sh
-  " > /netflix-proxy.sh
-  
-  
